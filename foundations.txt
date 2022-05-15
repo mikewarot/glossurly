@@ -1,0 +1,19 @@
+At the foundation level of this project, there needs to be a way to take text, record it, and then link to it.
+
+The 2 biggest problems in computer science as I understand them are
+
+  naming things
+  
+  cache invalidation
+  
+  off by one errors
+  
+It is my understanding that I can skip the first 2 by the following steps
+
+  never name things - use their cryptographic hash to refer to them, in a manner like git, et al
+  
+  in order to deal with time / spacetime / all things timey/whimey, I'll use an idea that appears to be absurd on the surface, but should prove to be quite useful once implemented... immutable text
+  
+  yes, that's right... you can never, EVER change the text once it's put in the buffer, it remains, and becomes part of a version of the text at that point in spacetime. You can, however, build a new version that makes modifications to it, much in the same manner as git (notice a theme?)
+  
+  
