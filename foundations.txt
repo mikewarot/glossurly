@@ -16,4 +16,19 @@ It is my understanding that I can skip the first 2 by the following steps
   
   yes, that's right... you can never, EVER change the text once it's put in the buffer, it remains, and becomes part of a version of the text at that point in spacetime. You can, however, build a new version that makes modifications to it, much in the same manner as git (notice a theme?)
   
+so, down at the byte level... there has to be a structure that programmers can wrangle, this is the first version, a prototype that I've avoided making for decades, but now boldy attempt
+
+goals:
+  ability to ingest a plain text (ASCII, because I'm old, maybe UTF-8 later) as a valid base layer document to build upon
   
+  references based on content hash
+  
+  local and redundant copies of sources to try to avoid broken links if at all possible
+  
+  a consistent and simple method of building deltas
+  
+  examples in multiple programming languages / that work in both Windows and Linux worlds
+  
+  documentation that doesn't suck
+  
+  eventually - ability to mark up things other than text, including images, sound, video, 3d models, whatever.
