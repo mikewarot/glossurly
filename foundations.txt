@@ -32,6 +32,16 @@ goals:
   documentation that doesn't suck
   
   eventually - ability to mark up things other than text, including images, sound, video, 3d models, whatever.
+
+demo level stuff   ## aka pseudo-code
+  this is a way to use monospaced plain text to illustrate things, and provide an input format
+
+  normal text is any line of text that doesn't start with GS:
+GS:^ -- refers to the above line of text, marking it up, as a whole
+
+  normal line of text
+GS:^9:^13:BOLD   ## makes "line" in the above line of text BOLD
+
   
 byte level stuff:
 
@@ -42,6 +52,8 @@ byte level stuff:
   
     hash : begin : end
 	  hash - the cryptographic hash of a layer's plain text representation
+            Wikipedia claims that SHA-1 is used in GIT, it should be good enough for GlosSurly as well
+            git-scm informs that SHA-1 is version 1, and v2 is SHA-256
 	  begin / end - the BYTE offsets of the start and end that is being referenced
 	    0 is BEFORE the first character, 1 is after it 
 		if the offsets are zero, only the space between characters is referenced
@@ -60,7 +72,4 @@ byte level stuff:
 	source address - see above address scheme
 	reference count - [4 bytes]  (think big!) - how many references are there to this source?
 	  reference[n] - n references that link to the source in a bidirection manner
-	  
-	
-
-  source 
+ 
