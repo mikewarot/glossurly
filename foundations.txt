@@ -32,3 +32,35 @@ goals:
   documentation that doesn't suck
   
   eventually - ability to mark up things other than text, including images, sound, video, 3d models, whatever.
+  
+byte level stuff:
+
+  plain text is just a buffer of stuff, ASCII, UTF-8, as found in the wild.
+  *Surly* opinion - string and text (not UTF-8, of course) CAN contain zeros
+  
+  address scheme  
+  
+    hash : begin : end
+	  hash - the cryptographic hash of a layer's plain text representation
+	  begin / end - the BYTE offsets of the start and end that is being referenced
+	    0 is BEFORE the first character, 1 is after it 
+		if the offsets are zero, only the space between characters is referenced
+		
+  reference scheme
+    address from above
+	type of reference
+	  0 - invalid
+	  1 - internet source address
+	  2 - in memory address of copy
+	  3 - on disk filename of copy
+	  4 - fork (uncertain what this means for the moment)
+
+  linking scheme
+    protocol version - 1 byte
+	source address - see above address scheme
+	reference count - [4 bytes]  (think big!) - how many references are there to this source?
+	  reference[n] - n references that link to the source in a bidirection manner
+	  
+	
+
+  source 
