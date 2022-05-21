@@ -50,6 +50,11 @@
         <Filename Value="mystrings.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="operations.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Operations"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

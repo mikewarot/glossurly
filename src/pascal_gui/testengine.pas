@@ -12,6 +12,7 @@ var
   TestStart,TestEnd: tDateTime;
   PassCount,FailCount : Integer;
   LogFunction : tLogger;
+  TestSection : String;
 
 procedure RunTests(TestSuite : String);
 
@@ -19,11 +20,41 @@ procedure RunTest(Test : String);
 
 implementation
 uses
-  DateUtils,MyStrings;
+  DateUtils,MyStrings,Operations;
 
 procedure RunTest(Test : String);
+var
+  command : string;
+  StringParam : String;
 begin
-  LogFunction('Test<<<'+Test+'>>>');
+  SkipSpace(Test);  If Test = '' then Exit;
+  If Test[1] = '-' then
+  begin
+    Delete(Test,1,1);
+    SkipSpace(Test);
+    TestSection := Test;
+    Exit;
+  end;
+  If Test[1] = '#' then Exit;  // comment
+
+  command := grabName(Test);
+  case Command of
+    'INIT'   : Operations.Init;
+    'CLEAR'  : Operations.Clear;
+    'EXPECT' : begin
+                 Expect(Test,'(');
+                 StringParam := GrabQuotedString(Test);
+                 If Operations.Buffer <> StringParam then
+                 begin
+                   Inc(FailCount);
+                   LogFunction('Error - Expected ['+StringParam+'] = Instead got ['+Operations.Buffer+']');
+                 end
+                 else
+                   Inc(PassCount);
+               end;
+  else
+    LogFunction(TestSection + ': Unknown Command - '+Command+' '+Test);
+  end;
 end;
 
 procedure RunTests(TestSuite : String);
@@ -54,5 +85,6 @@ begin
   FailCount := 0;
   TestStart := Now;
   TestEnd := Now;
+  TestSection := 'Unlabeled Section';
 end.
 

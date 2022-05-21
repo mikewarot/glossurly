@@ -11,12 +11,17 @@ interface
 
   function GrabString(Var S : String): String;
 
+  Function GrabName(Var S : String): String;
+
   function GrabNumber(Var S : String): Int64;
 
   function GrabUntil(Var S : String; Delimiter : CharSet):String;
 
   function GrabLine(Var S : String): String;
 
+  Function GrabQuotedString(Var S : String): String;
+
+  Procedure Expect(Var S : String; ExpectedString : String);
 
 implementation
 
@@ -38,6 +43,19 @@ implementation
       delete(s,1,1);
     end;
     GrabString := T;
+  end;
+
+  Function GrabName(Var S : String): String;
+  var
+    t : string;
+  begin
+    t := '';
+    While (S <> '') AND (S[1] in ['A'..'Z','a'..'z']) do
+    begin
+      t := t + UpCase(s[1]);
+      delete(s,1,1);
+    end;
+    GrabName := T;
   end;
 
   function GrabNumber(Var S : String): Int64;
@@ -108,6 +126,32 @@ implementation
       if s = '' then done := true;
     end;
     GrabLine := T;
+  end;
+
+  Function GrabQuotedString(Var S : String): String;
+  var
+    t : string;
+  begin
+    t := '';
+    skipspace(S);
+    If (S <> '') AND (S[1] = '''') then
+    begin
+      delete(s,1,1);
+      while (s <> '') AND (s[1] <> '''') do
+      begin
+        t := t + s[1];
+        delete(s,1,1);
+      end;
+      if (s <> '') AND (s[1] = '''') then
+        Delete(S,1,1);
+    end;
+    GrabQuotedString := T;
+  end;
+
+  Procedure Expect(Var S : String; ExpectedString : String);
+  begin
+    If Pos(ExpectedString,S) = 1 then
+      Delete(S,1,Length(ExpectedString));
   end;
 
 end.
