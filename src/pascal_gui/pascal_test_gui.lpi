@@ -41,6 +41,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
+      <Unit>
+        <Filename Value="testengine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TestEngine"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

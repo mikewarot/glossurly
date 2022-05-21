@@ -39,14 +39,12 @@ type
 
 var
   Form1: TForm1;
-  TestStart,TestEnd: tDateTime;
-  PassCount,FailCount : Integer;
 
 implementation
 
 {$R *.lfm}
 uses
-  DateUtils;
+  DateUtils,TestEngine;
 
 { TForm1 }
 
@@ -71,27 +69,18 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  PassCount := 0;
-  FailCount := 0;
+end;
 
-  TestStart := Now;
-  TestEnd   := TestStart;
+procedure LogMessage(S : String);
+begin
+  Form1.Memo2.Append(S);
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
-var
-  LogMessage : String;
 begin
-  TestStart := Now;
-  TestEnd   := TestStart;
-  Memo2.Append('--- Starting Test ---');
+  TestEngine.LogFunction := @LogMessage;
 
-  Memo2.Append('--- End Test ---');
-  TestEnd := Now;
-  LogMessage := PassCount.ToString + ' Tests Passed';     Memo2.Append(LogMessage);
-  LogMessage := FailCount.ToString + ' Tests Failed';     Memo2.Append(LogMessage);
-  LogMessage := 'Run Time - ' + MilliSecondsBetween(TestEnd,TestStart).ToString+' mSec';
-    Memo2.Append(Logmessage);
+  TestEngine.RunTests(Memo1.ToString);
 
   StatusBar1.Panels[1].Text := 'Pass: ' + PassCount.ToString;
   StatusBar1.Panels[2].Text := 'Fail: ' + FailCount.ToString;
