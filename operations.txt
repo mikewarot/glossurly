@@ -1,0 +1,69 @@
+Operations are the basis of layering string buffers.
+
+This file best viewed in a monospaced font
+
+
+Text Operations
+  Clear - Empties the buffer, removes all content
+  Insert(Location,TextToInsert)
+  Delete(Location,Length)
+  Tick(TimeStamp) - adds timing information to a layer (needed later, I think)
+
+Execution Layer
+  Do(OperationList)
+  UnDo(OperationCount)
+  ReDo(OperationCount) - removes last N operations, places them on the ReDo stack
+
+Processing Functions
+  Import(URL) - brings a layer (or layers) into memory
+  ExportHTML(FileSpec) - outputs a structure as HTML
+  SaveAs(FileSpec) - outputs the tree to a natively formatted file
+  FlattenText - Returns a new text buffer, with all previous operations applied, as a string 
+  FlattenToHTML - Returns an HTML string describing the text
+
+
+Testing ideas
+  Init - Purges all previous state, returns empty buffer
+  Expect(X) - Compares buffer to X, errors out if not true
+  ExpectError(E) - Operation Under Test should produce error X
+  Clear - Always returns an empty buffer
+  FileExpect(Name,X) - File(Name) should exist, and contain X
+  # comment line, of course
+  - Test section name
+
+Testing should be done in a cross-platform manner, I.E. it should be possible to specify the tests as a set of files, to be interpreted by the testing engine.
+
+
+Sample test script:
+
+# Test script v 1.0 - Mike Warot
+-Test Initialization
+Init
+Expect('')
+Clear
+- Test File Handling
+Expect('')
+Import('does not exist.txt')
+ExpectError(FileDoesNotExist)
+-Test Text Operators
+Clear
+Insert(0,'This is a test\n')  # use the standard escapes for characters, for now
+Expect('This is a test\n')
+Delete(0,5)		      # test deletion from beginning
+Expect('is a test\n')  
+Delete(100,5)                 # delete text that doesn't exist
+ExpectError(RangeError)
+Clear
+Insert(0,'This is a test\n')
+Delete(10,5)
+Expect('This is a ')
+Clear
+Insert(0,'Hello')
+Insert(5,', World!')
+Expect('Hello, World!')
+-Test Null handling
+Clear
+Insert(0,'Hello, World!')
+Insert(7,'\#00 Null Tollerant ')
+Expect('Hello, \#00 Null Tollerant World!')
+  
