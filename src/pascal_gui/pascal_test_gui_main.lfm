@@ -1,0 +1,43 @@
+object Form1: TForm1
+  Left = 389
+  Height = 449
+  Top = 235
+  Width = 757
+  Caption = 'GlosSurly - Testing GUI - Pascal'
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object MainMenu1: TMainMenu
+    Left = 40
+    Top = 16
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      OnClick = MenuItem1Click
+      object MenuItem3: TMenuItem
+        Caption = '&Open'
+        OnClick = MenuItem3Click
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'E&xit'
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&Help'
+      object MenuItem5: TMenuItem
+        Caption = '&About'
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.test'
+    FileName = 'C:\Users\User\glossurly'
+    Filter = 'Test file|*.test|All Files|*.*'
+    InitialDir = 'C:\Users\User\'
+    Left = 163
+    Top = 21
+  end
+end

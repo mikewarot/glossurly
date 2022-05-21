@@ -1,0 +1,30 @@
+# Test script v 1.0 - Mike Warot
+- Test Initialization
+Init
+Expect('')
+Clear
+- Test File Handling
+Expect('')
+Import('does not exist.txt')
+ExpectError(FileDoesNotExist)
+-Test Text Operators
+Clear
+Insert(0,'This is a test\n')  # use the standard escapes for characters, for now
+Expect('This is a test\n')
+Delete(0,5)		      # test deletion from beginning
+Expect('is a test\n')  
+Delete(100,5)                 # delete text that doesn't exist
+ExpectError(RangeError)
+Clear
+Insert(0,'This is a test\n')
+Delete(10,5)
+Expect('This is a ')
+Clear
+Insert(0,'Hello')
+Insert(5,', World!')
+Expect('Hello, World!')
+-Test Null handling
+Clear
+Insert(0,'Hello, World!')
+Insert(7,'\#00 Null Tollerant ')
+Expect('Hello, \#00 Null Tollerant World!')
