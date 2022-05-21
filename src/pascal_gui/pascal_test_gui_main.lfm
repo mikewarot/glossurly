@@ -2,11 +2,49 @@ object Form1: TForm1
   Left = 389
   Height = 449
   Top = 235
-  Width = 757
+  Width = 1059
   Caption = 'GlosSurly - Testing GUI - Pascal'
+  ClientHeight = 425
+  ClientWidth = 1059
   Menu = MainMenu1
   OnCreate = FormCreate
+  OnResize = FormResize
   LCLVersion = '2.2.0.4'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 402
+    Width = 1059
+    Panels = <    
+      item
+        Text = 'no file'
+        Width = 400
+      end    
+      item
+        Text = 'Pass: 0'
+        Width = 100
+      end    
+      item
+        Text = 'Fail: 0'
+        Width = 100
+      end    
+      item
+        Text = '0 Tests run in 0.00 mSec'
+        Width = 200
+      end>
+    SimplePanel = False
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 400
+    Top = 0
+    Width = 440
+    Lines.Strings = (
+      'Memo1'
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
   object MainMenu1: TMainMenu
     Left = 40
     Top = 16
@@ -36,7 +74,7 @@ object Form1: TForm1
     DefaultExt = '.test'
     FileName = 'C:\Users\User\glossurly'
     Filter = 'Test file|*.test|All Files|*.*'
-    InitialDir = 'C:\Users\User\'
+    InitialDir = 'C:\Users\User\glossurly\test'
     Left = 163
     Top = 21
   end

@@ -12,22 +12,30 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit>
       <Unit>
         <Filename Value="pascal_test_gui_main.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="23"/>
-        <CursorPos X="5" Y="51"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="43"/>
+        <CursorPos X="22" Y="75"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\statusbar.inc"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="40"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="13">
+    <JumpHistory HistoryIndex="22">
       <Position>
         <Filename Value="pascal_test_gui_main.pas"/>
       </Position>
@@ -82,6 +90,42 @@
       <Position>
         <Filename Value="pascal_test_gui_main.pas"/>
         <Caret Line="54" Column="25" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="51" Column="5" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="52" Column="5" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="53" Column="62" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="54" Column="62" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="56" Column="52" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="70" Column="33" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="64" Column="6" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="65" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="29" Column="90" TopLine="13"/>
       </Position>
     </JumpHistory>
     <RunParams>
