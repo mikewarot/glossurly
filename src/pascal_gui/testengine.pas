@@ -26,6 +26,8 @@ procedure RunTest(Test : String);
 var
   command : string;
   StringParam : String;
+  OffsetParam,
+  LengthParam : Integer;
 begin
   SkipSpace(Test);  If Test = '' then Exit;
   If Test[1] = '-' then
@@ -52,9 +54,26 @@ begin
                  else
                    Inc(PassCount);
                end;
+    'DELETE' : begin
+                 Expect(Test,'(');
+                 OffsetParam := GrabNumber(Test);
+                 Expect(Test,',');
+                 LengthParam := GrabNumber(Test);
+                 CommandDelete(OffsetParam,LengthParam);
+               end;
+    'INSERT' : begin
+                 Expect(Test,'(');
+                 OffsetParam := GrabNumber(Test);
+                 Expect(Test,',');
+                 StringParam := GrabQuotedString(Test);
+                 CommandInsert(OffsetParam,StringParam);
+               end
   else
-    LogFunction(TestSection + ': Unknown Command - '+Command+' '+Test);
-  end;
+    begin
+      inc(FailCount);
+      LogFunction(TestSection + ': Unknown Command - '+Command+' '+Test);
+    end;
+  end; // case
 end;
 
 procedure RunTests(TestSuite : String);
