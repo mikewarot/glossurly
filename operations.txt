@@ -22,14 +22,20 @@ Processing Functions
   FlattenToHTML - Returns an HTML string describing the text
 
 
-Testing ideas
-  Init - Purges all previous state, returns empty buffer
-  Expect(X) - Compares buffer to X, errors out if not true
-  ExpectError(E) - Operation Under Test should produce error X
-  Clear - Always returns an empty buffer
-  FileExpect(Name,X) - File(Name) should exist, and contain X
-  # comment line, of course
-  - Test section name
+Testing Engine ideas
+  # - comment, always removed before execution of tests
+  \x00 - hex null
+  \n - newline - try to stick to C escape sequences
+  Operations - always procede, leaving results and/or errors
+    Init - Purges all previous state, returns empty buffer
+    Clear - Always returns an empty buffer
+    FileExpect(Name,X) - File(Name) should exist, and contain X
+    - Test section name  - used to label all subsequent logs, etc
+  Assertions - match results and / or errors
+    Expect(X) - Compares buffer to X, errors out if not true
+    ExpectError(E) - Operation Under Test should produce error X
+
+  At end of test, summarize results
 
 Testing should be done in a cross-platform manner, I.E. it should be possible to specify the tests as a set of files, to be interpreted by the testing engine.
 
@@ -37,7 +43,7 @@ Testing should be done in a cross-platform manner, I.E. it should be possible to
 Sample test script:
 
 # Test script v 1.0 - Mike Warot
--Test Initialization
+- Test Initialization
 Init
 Expect('')
 Clear
