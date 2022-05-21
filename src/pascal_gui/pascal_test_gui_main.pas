@@ -13,8 +13,10 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    Button1: TButton;
     MainMenu1: TMainMenu;
     Memo1: TMemo;
+    Memo2: TMemo;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
@@ -23,6 +25,7 @@ type
     OpenDialog1: TOpenDialog;
     Separator1: TMenuItem;
     StatusBar1: TStatusBar;
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
@@ -36,10 +39,14 @@ type
 
 var
   Form1: TForm1;
+  TestStart,TestEnd: tDateTime;
+  PassCount,FailCount : Integer;
 
 implementation
 
 {$R *.lfm}
+uses
+  DateUtils;
 
 { TForm1 }
 
@@ -64,7 +71,23 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  PassCount := 0;
+  FailCount := 0;
 
+  TestStart := Now;
+  TestEnd   := TestStart;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  TestStart := Now;
+  TestEnd   := TestStart;
+
+  TestEnd := Now;
+  StatusBar1.Panels[1].Text := 'Pass: ' + PassCount.ToString;
+  StatusBar1.Panels[2].Text := 'Fail: ' + FailCount.ToString;
+  StatusBar1.Panels[3].Text:=
+    'Run Time - ' + MilliSecondsBetween(TestEnd,TestStart).ToString+' mSec';
 end;
 
 procedure TForm1.FormResize(Sender: TObject);
