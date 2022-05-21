@@ -49,10 +49,22 @@ begin
                  If Operations.Buffer <> StringParam then
                  begin
                    Inc(FailCount);
-                   LogFunction('Error - Expected ['+StringParam+'] = Instead got ['+Operations.Buffer+']');
+                   LogFunction(TestSection + ' - Expected ['+StringParam+'] Instead got ['+Operations.Buffer+']');
                  end
                  else
                    Inc(PassCount);
+               end;
+    'EXPECTERROR' : begin
+                 Expect(Test,'(');
+                 StringParam := GrabQuotedString(Test);
+                 If Operations.ErrorName <> StringParam then
+                 begin
+                   Inc(FailCount);
+                   LogFunction(TestSection + ' - ExpectedError ['+StringParam+'] Instead got ['+Operations.ErrorName+']');
+                 end
+                 else
+                   Inc(PassCount);
+                 Operations.ErrorName := ''; // reset the error now that it's been logged
                end;
     'DELETE' : begin
                  Expect(Test,'(');
@@ -67,6 +79,11 @@ begin
                  Expect(Test,',');
                  StringParam := GrabQuotedString(Test);
                  CommandInsert(OffsetParam,StringParam);
+               end;
+    'IMPORT' : begin
+                 Expect(Test,'(');
+                 StringParam := GrabQuotedString(Test);
+                 CommandImport(StringParam);
                end
   else
     begin

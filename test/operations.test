@@ -6,7 +6,7 @@ Clear
 - Test File Handling
 Expect('')
 Import('does not exist.txt')
-ExpectError(FileDoesNotExist)
+ExpectError('File not found')
 -Test Text Operators
 Clear
 Insert(0,'This is a test\n')  # use the standard escapes for characters, for now
@@ -14,7 +14,7 @@ Expect('This is a test\n')
 Delete(0,5)		      # test deletion from beginning
 Expect('is a test\n')  
 Delete(100,5)                 # delete text that doesn't exist
-ExpectError(RangeError)
+ExpectError('Range Error')
 Clear
 Insert(0,'This is a test\n')
 Delete(10,5)

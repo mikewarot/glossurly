@@ -103,7 +103,7 @@ object Form1: TForm1
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = '.test'
-    FileName = 'C:\Users\User\glossurly'
+    FileName = 'operations.test'
     Filter = 'Test file|*.test|All Files|*.*'
     InitialDir = 'C:\Users\User\glossurly\test'
     Left = 163
