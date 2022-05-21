@@ -21,8 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="63"/>
-        <CursorPos X="62" Y="88"/>
+        <TopLine Value="67"/>
+        <CursorPos Y="96"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -36,10 +36,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="pascal_test_gui_main.pas"/>
-        <Caret Line="41" Column="3" TopLine="11"/>
-      </Position>
       <Position>
         <Filename Value="pascal_test_gui_main.pas"/>
         <Caret Line="42" Column="3" TopLine="11"/>
@@ -155,6 +151,10 @@
       <Position>
         <Filename Value="pascal_test_gui_main.pas"/>
         <Caret Line="91" Column="18" TopLine="63"/>
+      </Position>
+      <Position>
+        <Filename Value="pascal_test_gui_main.pas"/>
+        <Caret Line="88" Column="62" TopLine="63"/>
       </Position>
     </JumpHistory>
     <RunParams>

@@ -79,11 +79,20 @@ begin
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
+var
+  LogMessage : String;
 begin
   TestStart := Now;
   TestEnd   := TestStart;
+  Memo2.Append('--- Starting Test ---');
 
+  Memo2.Append('--- End Test ---');
   TestEnd := Now;
+  LogMessage := PassCount.ToString + ' Tests Passed';     Memo2.Append(LogMessage);
+  LogMessage := FailCount.ToString + ' Tests Failed';     Memo2.Append(LogMessage);
+  LogMessage := 'Run Time - ' + MilliSecondsBetween(TestEnd,TestStart).ToString+' mSec';
+    Memo2.Append(Logmessage);
+
   StatusBar1.Panels[1].Text := 'Pass: ' + PassCount.ToString;
   StatusBar1.Panels[2].Text := 'Fail: ' + FailCount.ToString;
   StatusBar1.Panels[3].Text:=
