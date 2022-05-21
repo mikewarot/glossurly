@@ -15,15 +15,27 @@ var
 
 procedure RunTests(TestSuite : String);
 
+procedure RunTest(Test : String);
+
 implementation
 uses
-  DateUtils;
+  DateUtils,MyStrings;
+
+procedure RunTest(Test : String);
+begin
+  LogFunction('Test<<<'+Test+'>>>');
+end;
 
 procedure RunTests(TestSuite : String);
 begin
   TestStart := Now;
   TestEnd   := TestStart;
   LogFunction('--- Starting Test ---');
+
+  While TestSuite <> '' do
+  begin
+    RunTest(GrabLine(TestSuite));
+  end;
 
   LogFunction('--- End Test ---');
   TestEnd := Now;

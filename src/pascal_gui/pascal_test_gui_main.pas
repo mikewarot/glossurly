@@ -69,6 +69,8 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  Memo1.Clear;
+  Memo2.Clear;
 end;
 
 procedure LogMessage(S : String);
@@ -80,7 +82,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
   TestEngine.LogFunction := @LogMessage;
 
-  TestEngine.RunTests(Memo1.ToString);
+  TestEngine.RunTests(Memo1.Lines.Text);
 
   StatusBar1.Panels[1].Text := 'Pass: ' + PassCount.ToString;
   StatusBar1.Panels[2].Text := 'Fail: ' + FailCount.ToString;

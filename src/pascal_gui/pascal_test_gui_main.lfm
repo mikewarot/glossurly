@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 389
+  Left = 333
   Height = 449
-  Top = 235
+  Top = 234
   Width = 1059
   Caption = 'GlosSurly - Testing GUI - Pascal'
   ClientHeight = 425
@@ -39,9 +39,14 @@ object Form1: TForm1
     Height = 400
     Top = 0
     Width = 440
+    Font.CharSet = OEM_CHARSET
+    Font.Name = 'Terminal'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
     Lines.Strings = (
       'Memo1'
     )
+    ParentFont = False
     ScrollBars = ssAutoBoth
     TabOrder = 1
   end
@@ -50,9 +55,16 @@ object Form1: TForm1
     Height = 290
     Top = 14
     Width = 553
+    Font.CharSet = OEM_CHARSET
+    Font.Height = -16
+    Font.Name = 'Terminal'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
     Lines.Strings = (
       'Memo2'
     )
+    ParentFont = False
+    ScrollBars = ssAutoBoth
     TabOrder = 2
   end
   object Button1: TButton

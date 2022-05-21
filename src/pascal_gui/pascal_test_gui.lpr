@@ -10,7 +10,7 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, pascal_test_gui_main, TestEngine
+  Forms, pascal_test_gui_main, TestEngine, mystrings
   { you can add units after this };
 
 {$R *.res}
