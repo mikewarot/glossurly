@@ -13,6 +13,7 @@ var
   PassCount,FailCount : Integer;
   LogFunction : tLogger;
   TestSection : String;
+  TestFolder  : String;
 
 procedure RunTests(TestSuite : String);
 
@@ -83,7 +84,7 @@ begin
     'IMPORT' : begin
                  Expect(Test,'(');
                  StringParam := GrabQuotedString(Test);
-                 CommandImport(StringParam);
+                 CommandImport(TestFolder+'\'+StringParam);
                end
   else
     begin
@@ -122,5 +123,6 @@ begin
   TestStart := Now;
   TestEnd := Now;
   TestSection := 'Unlabeled Section';
+  TestFolder := 'C:\Users\User\glossurly\test';
 end.
 

@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="35"/>
       </Unit>
       <Unit>
         <Filename Value="pascal_test_gui_main.pas"/>
@@ -20,9 +20,9 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="47"/>
+        <TopLine Value="26"/>
         <CursorPos X="15" Y="73"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -30,29 +30,29 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="TestEngine"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="36"/>
-        <CursorPos X="37" Y="58"/>
-        <UsageCount Value="31"/>
+        <TopLine Value="14"/>
+        <CursorPos Y="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="mystrings.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="55"/>
-        <CursorPos X="13" Y="137"/>
-        <UsageCount Value="30"/>
+        <TopLine Value="158"/>
+        <CursorPos X="36" Y="167"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="operations.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Operations"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="35"/>
-        <CursorPos X="25" Y="46"/>
-        <UsageCount Value="23"/>
+        <TopLine Value="8"/>
+        <CursorPos Y="55"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -65,123 +65,123 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="mystrings.pas"/>
-        <Caret Line="151" Column="32" TopLine="124"/>
+        <Caret Line="176" Column="36" TopLine="147"/>
       </Position>
       <Position>
         <Filename Value="mystrings.pas"/>
-        <Caret Line="153" Column="39" TopLine="124"/>
+        <Caret Line="151" TopLine="145"/>
       </Position>
       <Position>
         <Filename Value="mystrings.pas"/>
-        <Caret Line="154" Column="41" TopLine="124"/>
+        <Caret Line="152" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="153" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="155" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="156" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="158" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="159" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="171" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="172" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="156" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="184" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="150" TopLine="132"/>
+      </Position>
+      <Position>
+        <Filename Value="mystrings.pas"/>
+        <Caret Line="185" TopLine="160"/>
       </Position>
       <Position>
         <Filename Value="testengine.pas"/>
-        <Caret Line="44" Column="30" TopLine="27"/>
+        <Caret Line="50" TopLine="34"/>
       </Position>
       <Position>
         <Filename Value="testengine.pas"/>
-        <Caret Line="40" Column="10" TopLine="21"/>
+        <Caret Line="56" TopLine="34"/>
       </Position>
       <Position>
         <Filename Value="testengine.pas"/>
-        <Caret Line="41" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="40" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="41" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="45" TopLine="21"/>
+        <Caret Line="32" TopLine="14"/>
       </Position>
       <Position>
         <Filename Value="mystrings.pas"/>
-        <Caret Line="152" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="153" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="154" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="152" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="155" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="152" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="155" TopLine="124"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="46" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="47" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="41" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="mystrings.pas"/>
-        <Caret Line="137" Column="13" TopLine="124"/>
+        <Caret Line="151" TopLine="133"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="38" Column="33" TopLine="4"/>
+        <Caret Line="64" Column="3" TopLine="38"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="35" Column="51" TopLine="11"/>
+        <Caret Line="63" Column="10" TopLine="39"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="16" Column="18" TopLine="11"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="62" Column="50" TopLine="41"/>
+        <Caret Line="66" Column="30" TopLine="38"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="18"/>
+        <Caret Line="56" TopLine="39"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="47" Column="18" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="74" Column="32" TopLine="47"/>
-      </Position>
-      <Position>
-        <Filename Value="testengine.pas"/>
-        <Caret Line="70" Column="20" TopLine="54"/>
+        <Caret Line="57" TopLine="39"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="64" TopLine="34"/>
+        <Caret Line="58" TopLine="39"/>
       </Position>
       <Position>
         <Filename Value="operations.pas"/>
-        <Caret Line="59" Column="12" TopLine="36"/>
+        <Caret Line="59" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="operations.pas"/>
+        <Caret Line="60" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="operations.pas"/>
+        <Caret Line="61" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="operations.pas"/>
+        <Caret Line="57" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="operations.pas"/>
+        <Caret Line="54" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="operations.pas"/>
+        <Caret Line="67" TopLine="39"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -192,13 +192,19 @@
   <Debugging>
     <Watches>
       <Item>
-        <Expression Value="command"/>
+        <Expression Value="c"/>
       </Item>
       <Item>
-        <Expression Value="Buffer"/>
+        <Expression Value="s"/>
       </Item>
       <Item>
-        <Expression Value="StringParam"/>
+        <Expression Value="t"/>
+      </Item>
+      <Item>
+        <Expression Value="filename"/>
+      </Item>
+      <Item>
+        <Expression Value="ErrorName"/>
       </Item>
     </Watches>
   </Debugging>

@@ -3,6 +3,8 @@ unit mystrings;
 {$mode ObjFPC}{$H+}
 
 interface
+  uses
+    StrUtils;  // Hex2Dec
 
   type
     CharSet = Set of Char;
@@ -129,21 +131,55 @@ implementation
   end;
 
   Function GrabQuotedString(Var S : String): String;
+
+    Function GrabChar : Char;
+    begin
+      if s <> '' then
+        begin
+          grabchar := s[1];
+          delete(s,1,1);
+        end
+      else
+        GrabChar := #0;
+    end;
+
   var
+    c : char;
     t : string;
+    done : boolean;
   begin
     t := '';
     skipspace(S);
-    If (S <> '') AND (S[1] = '''') then
+    If GrabChar = #39 then
     begin
-      delete(s,1,1);
-      while (s <> '') AND (s[1] <> '''') do
+      done := (s = '');
+      while NOT Done do
       begin
-        t := t + s[1];
-        delete(s,1,1);
+        c := GrabChar;
+        case C of
+          '\' : begin
+                  Case GrabChar of
+                    'x' : begin
+                            t := t + char(hex2dec(copy(s,1,2)));
+                            delete(s,1,2);
+                          end;
+                    '\' : t := t + '\';
+                    'n' : t := t + #10;
+                  end; // case GrabChar
+                end; // '\'
+          #39 : Begin   // single quote  '
+                  if (s = '') OR (s[1] <> #39) then
+                    done := true
+                  else
+                    begin
+                      delete(s,1,1);
+                      t := t + #39;
+                    end;
+                  end
+          else
+            t := t + c;
+          end; // case C
       end;
-      if (s <> '') AND (s[1] = '''') then
-        Delete(S,1,1);
     end;
     GrabQuotedString := T;
   end;

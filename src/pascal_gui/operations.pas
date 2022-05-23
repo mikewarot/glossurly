@@ -57,8 +57,9 @@ Begin
     reset(f);
     read(f,buffer);
     close(f);
+    ErrorName := '';
   except
-    on E: EInOutError do
+    on e:Exception do
       ErrorName := E.Message;
   end;
 End;

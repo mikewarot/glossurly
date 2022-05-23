@@ -7,6 +7,9 @@ Clear
 Expect('')
 Import('does not exist.txt')
 ExpectError('File not found')
+Clear
+Import('hello.txt')
+Expect('Hello, World!')
 -Test Text Operators
 Clear
 Insert(0,'This is a test\n')  # use the standard escapes for characters, for now
