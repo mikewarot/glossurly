@@ -30,17 +30,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="TestEngine"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="14"/>
-        <CursorPos Y="32"/>
+        <TopLine Value="66"/>
+        <CursorPos X="35" Y="92"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="mystrings.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="158"/>
+        <TopLine Value="124"/>
         <CursorPos X="36" Y="167"/>
         <UsageCount Value="32"/>
         <Loaded Value="True"/>
@@ -49,9 +48,10 @@
         <Filename Value="operations.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Operations"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="8"/>
-        <CursorPos Y="55"/>
+        <TopLine Value="49"/>
+        <CursorPos X="21" Y="61"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>

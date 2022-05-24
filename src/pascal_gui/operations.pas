@@ -16,6 +16,7 @@ Procedure Clear;
 Procedure CommandInsert(Position : Integer;   S : String);
 Procedure CommandDelete(Position,L : Integer);
 Procedure CommandImport(FileName : String);
+Procedure CommandImportHTML(FileName : String);
 
 implementation
 
@@ -51,11 +52,17 @@ End;
 Procedure CommandImport(FileName : String);
 Var
   f : textfile;
+  s : string;
 Begin
   AssignFile(F,FileName);
   try
     reset(f);
-    read(f,buffer);
+    buffer := '';
+    while not eof(f) do
+    begin
+      readln(f,s);
+      buffer := buffer+s+#10;
+    end;
     close(f);
     ErrorName := '';
   except
@@ -63,6 +70,21 @@ Begin
       ErrorName := E.Message;
   end;
 End;
+
+Procedure CommandImportHTML(FileName : String);
+Var
+  OpenBody,CloseBody : Integer;
+  lc_buffer : string;
+Begin
+  CommandImport(FileName);
+  lc_buffer := lowercase(buffer);
+  OpenBody := Pos('<body>',lc_Buffer);
+  CloseBody := Pos('</body>',lc_Buffer);
+  If CloseBody <> 0 then Delete(Buffer,CloseBody,MaxInt);
+  If OpenBody <> 0 then Delete(Buffer,1,OpenBody+7);
+End;
+
+
 
 begin
   ErrorName := '';

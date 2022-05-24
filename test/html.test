@@ -1,0 +1,4 @@
+# HTML Test script v 1.0 - Mike Warot
+Clear
+ImportHTML('html_test.html')
+Expect('\nMy First Heading\n\nMy first paragraph.\n')

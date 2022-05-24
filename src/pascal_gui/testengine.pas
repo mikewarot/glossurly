@@ -85,6 +85,11 @@ begin
                  Expect(Test,'(');
                  StringParam := GrabQuotedString(Test);
                  CommandImport(TestFolder+'\'+StringParam);
+               end;
+    'IMPORTHTML' : begin
+                 Expect(Test,'(');
+                 StringParam := GrabQuotedString(Test);
+                 CommandImportHTML(TestFolder+'\'+StringParam);
                end
   else
     begin
