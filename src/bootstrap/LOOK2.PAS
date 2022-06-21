@@ -72,7 +72,6 @@ begin
 
     GotoXY(1,1); TextAttr := $71;
     Write(Header);
-//    Write('LOOK ',Current:5 ,'+',Xpos:3,'   ',LineC:5,'  File:',Trim(FileName,40));
 
     TextAttr := $17;
     For i := 0 to Height-3 do
@@ -87,27 +86,30 @@ begin
     GotoXY(1,Height); TextAttr := $71;
     Write(Trim(' ^v - Scroll   PgUp,PgDn - Scoll Page   Home,End - Top/End file       X - Exit ',Width-1));
 	GotoXY(1,Height);
-    GetKey(Ascii,Extend);
-    Case Ascii of
-      'x','X',ESC  : Done := True;
-    End;
-    Case Extend of
-      Home  : Current := 1;
-      EEnd  : If LineC > (Height-2) then Current := LineC-(height-3)
-                            else Current := 1;
-      PgUp  : If Current > (Height-2) then Dec(Current,(height-2))
+
+    Repeat
+      GetKey(Ascii,Extend);
+      Case Ascii of
+        'x','X',ESC  : Done := True;
+      End;
+      Case Extend of
+        Home  : Current := 1;
+        EEnd  : If LineC > (Height-2) then Current := LineC-(height-3)
                               else Current := 1;
-      PgDn  : If Current + (Height-2) < LineC then
-                Inc(Current,(Height-2))
-              else
-                Current := LineC;
-      Up    : If Current > 1  then Dec(Current);
-      Down  : If Current < LineC then Inc(Current);
-      Right : If Xpos < 250 then Inc(Xpos);
-      Left  : If Xpos > 0   then Dec(Xpos);
-      F10,
-      Alt_X : Done := True;
-    End;
+        PgUp  : If Current > (Height-2) then Dec(Current,(height-2))
+                                else Current := 1;
+        PgDn  : If Current + (Height-2) < LineC then
+                  Inc(Current,(Height-2))
+                else
+                  Current := LineC;
+        Up    : If Current > 1  then Dec(Current);
+        Down  : If Current < LineC then Inc(Current);
+        Right : If Xpos < 250 then Inc(Xpos);
+        Left  : If Xpos > 0   then Dec(Xpos);
+        F10,
+        Alt_X : Done := True;
+      End;
+    Until Done OR (Not Keypressed);
   Until Done;
 
   Close(Source);
