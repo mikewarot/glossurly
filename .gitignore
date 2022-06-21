@@ -1,3 +1,6 @@
-src/pascal_gui/backup/*
-src/pascal_gui/lib/*
+backup/
+lib/
 *.exe
+*.o
+*.bak
+*.ppu
